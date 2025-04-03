@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buku Tamu Pernikahan</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="guestbook-container">
+      <div class="guestbook-header">
+        <h1><i class="fas fa-book-open"></i> Buku Tamu Pernikahan</h1>
+        <p class="subtitle">Silahkan tinggalkan pesan untuk kami</p>
+      </div>
+
+      <div class="guestbook-columns">
+        <div class="form-column">
+          <form id="guestForm" class="guest-form">
+            <div class="form-group">
+              <label for="name"><i class="fas fa-user"></i> Nama Lengkap</label>
+              <input type="text" id="name" required placeholder="Nama Anda" />
+            </div>
+
+            <div class="form-group">
+              <label for="address"
+                ><i class="fas fa-map-marker-alt"></i> Alamat (Opsional)</label
+              >
+              <input type="text" id="address" placeholder="Alamat Anda" />
+            </div>
+
+            <div class="form-group">
+              <label for="attendance"
+                ><i class="fas fa-calendar-check"></i> Konfirmasi
+                Kehadiran</label
+              >
+              <select id="attendance" required>
+                <option value="">Pilih Status Kehadiran</option>
+                <option value="Hadir">Hadir</option>
+                <option value="Tidak Hadir">Tidak Hadir</option>
+              </select>
+            </div>
+
+            <div class="form-group" id="guestCountGroup" style="display: none">
+              <label for="guestCount"
+                ><i class="fas fa-users"></i> Jumlah Orang</label
+              >
+              <input type="number" id="guestCount" min="1" value="1" />
+            </div>
+
+            <div class="form-group">
+              <label for="message"
+                ><i class="fas fa-heart"></i> Pesan & Doa</label
+              >
+              <textarea
+                id="message"
+                required
+                placeholder="Tulis pesan Anda..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              <i class="fas fa-pen"></i> Tandatangani Buku Tamu
+            </button>
+          </form>
+        </div>
+
+        <div class="messages-column">
+          <div class="messages-header">
+            <h2><i class="fas fa-comments"></i> Pesan Tamu</h2>
+          </div>
+          <div id="guestMessages" class="messages-list">
+            <!-- Pesan akan muncul di sini -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
